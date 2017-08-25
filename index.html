@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> treemacher final evaluation </title>
+    <style>
+    #header {
+      margin-left: 30px;
+    }
+    #container {
+      width: 70%;
+      text-align: justify;
+      margin-left: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div id="header">
+    <h1> GSoC 2017 treematcher Overview </h1>
+    <h2> Organization: Open Bioinformatics Foundation </h2>
+    <h3> Project: ete3/treematcher </h3>
+  </div>
+
+  <hr/>
+
+  <div id="container">
+    <p>
+      <h4> Contents </h4>
+      <ul>
+        <li> <a href="#abstract"> Abstract </a> </li>
+        <li> <a href="#targets"> Targets </a> </li>
+        <li> <a href="#background"> Background </a> </li>
+        <li> <a href="#period1"> Coding Period 1 </a> </li>
+        <li> <a href="#period2"> Coding Period 2 </a> </li>
+        <li> <a href="#period3"> Coding Period 3 </a> </li>
+        <li> <a href="#parts"> Interesting parts </a> </li>
+        <li> <a href="#conclusion"> Conclusion </a> </li>
+        <li> <a href="#links"> Useful links </a> </li>
+      </ul>
+    </p>
+
+    <p id="abstract">
+      <h4> Abstract </h4>
+      Treematcher is a subproject of ete3. Target of treematcher is to perform search
+      to phylogenetic trees using tree patterns that allows relax connection between
+      tree nodes in newick format mimicking the regular expressions' functionality.
+    </p>
+
+    <p id="targets">
+      <h4> Targets: </h4>
+      <ul>
+        <li> Have the ability to use regular expressions' symbols (metacharacters) and functionality to describe a pattern</li>
+        <li> Allow treematcher's pattern describe loose connection between nodes </li>
+        <li> Allow treematcher's pattern describe patterns in a node's descendants </li>
+        <li> Treematcher's patterns describe attributes to so test the presence of conditions in a tree nodes </li>
+      </ul>
+    </p>
+
+    <p id="background">
+      <h4> Background </h4>
+      Treematcher is not a new project. The base code was already written the time GSoC started
+      and that code was used to extend it's functionality. The treematcher could match patterns
+      that wheren't use metacharacters and could skip nodes using the "one or more" (intermediate nodes)
+      between two nodes functionality ( the + sumbol).
+    </p>
+
+    <h4> Coding periods </h4>
+
+    <p id="period1">
+      <h4> First Coding Period </h4>
+
+      So in the first coding period the was about understaning the logic and the approach
+      of the problem and defining how treematcher will adopt regular expressions' functionality.
+      <br />
+      That time was about the relax connection between the nodes.
+      The basic symbols' functionality was implemented (like *, +, ^, $).
+      <br/>
+      At late first period the implementation logic changed and insted of treating every
+      metacharacter indipendently, they where categorized in cases.
+    </p>
+
+    <p id="period2">
+      <h4> Second Coding Period </h4>
+      In the second coding period the rest of the symbols and some sets where implemented.
+      That was done quickly thanks to the new technique that was introduced.
+      <br/>
+      The use of purly python expressions to define a node gave the ability for
+      more complex patterns to be expressed like numerical comparisons between sets or the whole tree.<br/>
+      In the second coding period the ability to describe a pattern about a node's descendants using metacharacters
+      was introduced and proved that the existing algorithm could not satisfy the treematcher needs. <br/>
+      That is an usefull ability that treeematcher should have, so after a long
+      debugging time of the approaches that were tried, the dessision to refactor the code was made and started.
+    </p>
+
+    <p id="period3">
+      <h4> Third coding period </h4>
+      During the third coding period the code was refactored quickly thanks to
+      mentrors' effort, the experience that where gained and the techniques that where learnt. <br/>
+      Before the refactoring the focus was on patterns that describe a tree's
+      topology, but after the refactor the focus is on nodes' descendants patterns
+      resulting the loss of a lot of functionality. <br/>
+      The new approach differs a lot in both implementation and logic to describe
+      the patterns. <br/>
+      That time the command line toolkit was updated and extended. <br/>
+      Treematcher's preperation for mering to it's parent project (ete3) was made
+      and documentation was updated.
+    </p>
+
+    <p id="parts">
+      <h4> Interesting parts </h4>
+      <ul>
+        <li> The catigorization of metacharacters (period 1) </li>
+        <li> The ability to use pure python expressions to define a node (period 2) </li>
+        <li> Limitations are met at describing nodes' descendants relax patterns (period2) </li>
+        <li> The code reefactoring (period 3) </li>
+      </ul>
+    </p>
+
+
+    <p id="conclusion">
+      <h4> Conclusion </h4>
+      What is done <br>
+      Treematcher is able to describe relax connection between nodes. <br/>
+      Treematcher is able to describe relax  patterns at a node's descendants. <br/>
+      Treematcher is able to test complex patterns using node's attributes. <br/>
+
+      <br/>
+      What is left to do <br/>
+
+        .... TO BE FILLED ...
+
+      <br/><br/>
+      Treematcher seems to satisfy a lot of the tergets that where set. <br/>
+      A lot of the student's code is not merged, but was used to find the limitations
+      of the approach or the techniques was extracted to meet the refactoring needs.
+    </p>
+
+    <p id="links">
+      <h4> Useful links </h4>
+      <ul>
+        <li> <a target="_blank" href="https://github.com/etetoolkit/treematcher" > Treematcher's github repository </a> </li>
+        <li> <a target="_blank" href="https://github.com/etetoolkit/ete"> etetoolkit github repository (Treematcher's parent project)</a> </li>
+        <li> <a target="_blank" href="https://github.com/etetoolkit/treematcher/blob/master/sdoc/tutorial/tutorial_treematcher.rst"> Treematcher's tutorial </a> </li>
+        <li> <a target="_blank" href="https://github.com/dPliakos"> Student's github profile </a> </li>
+        <li> <a target="_blank" href="#"> Description about the code before the refactoring </a> </li>
+      </ul>
+    </p>
+
+
+  </div>
+
+
+
+</body>
+</html>
